@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap');
+
+:root {
+  --color-primary: #222;
+  --color-secondary: #555;
+  --color-accent: #d6b161;
+  --bg-light: #f9f9f9;
+  --font-main: 'Segoe UI', sans-serif;
+
+  --radius: 8px;
+  --shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--bg-light);
+  color: var(--color-primary);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}

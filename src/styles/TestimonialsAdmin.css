@@ -1,0 +1,53 @@
+/* TestimonialsAdmin.css */
+.testimonials-admin {
+    padding: 2rem;
+  }
+  
+  .upload-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+  
+  .upload-form input,
+  .upload-form textarea,
+  .upload-form button {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .testimonials-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .testimonial-item {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .testimonial-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .testimonial-item button {
+    margin-top: 0.5rem;
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

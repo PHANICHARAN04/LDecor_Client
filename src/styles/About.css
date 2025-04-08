@@ -1,0 +1,155 @@
+.about-hero-overlay h1 {
+  position: relative;
+  padding-bottom: 1rem;
+  display: inline-block;
+}
+
+.title-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #d4af37;
+  transform-origin: left center;
+}
+
+.about-page {
+  font-family: 'Cormorant Garamond', serif;
+  background-color: #fffaf7;
+  color: #1b1f3b;
+}
+
+/* Hero */
+.about-hero-section {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-hero-overlay {
+  background: none;
+  padding: 3rem 4rem;
+  border-radius: 20px;
+  text-align: left;
+  /*box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);*/
+}
+
+.about-hero-overlay h1 {
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #d4af37;
+}
+
+.about-hero-overlay p {
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Description */
+.about-description {
+  max-width: 850px;
+  margin: 5rem auto;
+  padding: 0 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.about-description p {
+  margin-bottom: 2rem;
+}
+
+/* Founders */
+.founders-section {
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.founder-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  position: relative;
+  flex-direction: row;
+}
+
+.founder-image {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.founder-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+
+.founder-image.framed::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #d4af37;
+  border-radius: 12px;
+  z-index: -1;
+  transform: rotate(-2.5deg);
+}
+
+.founder-card:last-child .founder-image.framed::before {
+  left: auto;
+  right: -15px;
+  transform: rotate(2.5deg);
+}
+
+.founder-text {
+  flex: 1;
+  padding: 1rem;
+}
+
+.founder-text h2 {
+  font-size: 2.2rem;
+  color: #d4af37;
+  margin-bottom: 1rem;
+}
+
+.founder-text p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-hero-overlay {
+    padding: 2rem;
+  }
+
+  .about-hero-overlay h1 {
+    font-size: 2.4rem;
+  }
+
+  .founder-card {
+    flex-direction: column;
+  }
+
+  .founder-image.framed::before {
+    display: none;
+  }
+}

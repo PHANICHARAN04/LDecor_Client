@@ -1,0 +1,178 @@
+body {
+  overflow-x: hidden; /* Essential for edge bleed */
+}
+
+.navbar {
+  font-family: 'Cormorant Garamond', serif;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+  background: transparent;
+  backdrop-filter: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo a {
+  display: flex;
+}
+
+.logo-img {
+  height: 70px; /* Increased size */
+  width: auto;
+  object-fit: contain;
+}
+
+/* Links Container */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.4rem;
+  margin-left: auto;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.navbar-links li {
+  min-width: fit-content;
+  white-space: nowrap;
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color:  #d4af37;
+  padding-bottom: 4px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar.scrolled .navbar-links li a {
+  color: #1b1f3b;
+}
+
+.navbar-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #d4af37;
+  transition: width 0.3s ease;
+}
+
+.navbar-links li a:hover::after {
+  width: 100%;
+}
+
+.navbar-links li a:hover {
+  color: #d4af37;
+}
+
+/* Hamburger */
+.menu-icon {
+  display: none;
+  z-index: 1001;
+  color: #1b1f3b;
+  cursor: pointer;
+  margin-left: 1.5rem;
+}
+
+/* Fix for icon getting cut off */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+
+  .navbar-links.desktop {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    right: 2rem;
+  }
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+  transition: right 0.4s ease;
+  z-index: 998;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.mobile-menu ul {
+  list-style: none;
+  text-align: center;
+}
+
+.mobile-menu ul li {
+  margin: 1.5rem 0;
+}
+
+.mobile-menu ul li a {
+  font-size: 1.8rem;
+  color: #1b1f3b;
+  font-family: 'Playfair Display', serif;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu ul li a:hover {
+  color: #d4af37;
+}
+
+/* Back to Top */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #d4af37;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.75rem 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  transition: transform 0.3s ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+}

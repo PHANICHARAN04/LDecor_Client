@@ -1,0 +1,496 @@
+:root {
+  --bg-color: #fffaf7;
+  --text-color: #ffffff;
+  --primary: #d4af37;
+  --secondary: #fceae8;
+  --rose: #b98c8c;
+  --soft-blush: #f9e5e5;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Poppins', sans-serif;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --radius: 20px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Cormorant Garamond', serif;
+  margin: 0;
+  padding: 0;
+}
+
+.home-page {
+  overflow-x: hidden;
+}
+
+/* ======================== Hero Section ======================== */
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  overflow: hidden;
+  background-color: var(--soft-blush);
+}
+
+.hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.65);
+}
+
+.hero-enhance {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.3) 100%);
+  pointer-events: none;
+}
+
+.hero-enhance::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.08;
+  animation: sparkleShift 20s linear infinite;
+  z-index: 2;
+}
+
+@keyframes sparkleShift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* =================== Floating Petals Animation =================== */
+.hero-floating-petals::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://www.transparenttextures.com/patterns/flowers.png');
+  opacity: 0.05;
+  animation: scrollBG 40s linear infinite;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@keyframes scrollBG {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 1000px;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 650px;
+  padding: 2rem;
+  color: var(--text-color);
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.35;
+  letter-spacing: 0.4px;
+  color: var(--text-color);
+  transition: all 0.4s ease-in-out;
+}
+
+.hero-content p.luxury-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: transparent;
+  background: linear-gradient(to right, #b59b3b, #d4af37, #f9e88b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: none;
+  margin-bottom: 2.5rem;
+  animation: slideFade 1.2s ease forwards;
+  opacity: 0;
+  transform: translateY(15px);
+}
+
+
+@keyframes slideFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* CTA Button */
+.cta-btn {
+  font-family: 'Cormorant Garamond', serif;
+  padding: 0.9rem 2rem;
+  background-color: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.cta-btn.shine::before {
+  content: '';
+  position: absolute;
+  left: -75%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-20deg);
+  transition: all 0.6s ease;
+}
+
+.cta-btn.shine:hover::before {
+  left: 130%;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+}
+
+/* Home Shine BTN */
+.homeshine-btn {
+  font-family: 'Cormorant Garamond', serif;
+  display: inline-block;
+  background: #d4af37;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid #d4af37;
+  position: relative;
+  overflow: hidden;
+}
+
+.homeshine-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 50%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(30deg);
+  transition: all 0.7s ease;
+}
+
+.homeshine-btn:hover {
+  background: #c9a227;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
+}
+
+.homeshine-btn:hover::before {
+  left: 120%;
+}
+
+
+
+/* ======================== Why Us ======================== */
+.our-promise {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5rem 3rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+}
+
+.our-promise h2 {
+    font-size: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 0.7rem;
+    color: #d4af37;
+}
+
+
+.divider {
+  height: 4px;
+  width: 100px;
+  background: var(--primary);
+  margin: 1rem auto 2rem;
+  border-radius: 2px;
+}
+
+.our-promise p {
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* =================== Testimonials Updated =================== */
+/* Testimonials Section */
+.testimonials {
+  font-family: 'Cormorant Garamond', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5rem 3rem;
+  max-width: 1000px;
+  margin: auto;
+  text-align: left;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 0.7rem;
+  color: #d4af37;
+}
+
+.testimonial-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.02);
+}
+
+.testimonial-img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.testimonial-card:hover .testimonial-img {
+  transform: scale(1.1);
+}
+
+.testimonial-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 85%;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.testimonial-card:hover .testimonial-overlay {
+  transform: translateY(0);
+}
+
+.testimonial-overlay h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.testimonial-overlay p {
+  max-height: 6.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.testimonial-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial-scroller {
+  display: flex;
+  width: max-content;
+  gap: 2rem;
+  animation: scrollLoop 15s linear infinite;
+}
+
+/* Perfect Infinite Loop */
+@keyframes scrollLoop {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.33%);
+  }
+}
+
+/* Pause scrolling when hovered */
+.testimonial-wrapper:hover .testimonial-scroller {
+  animation-play-state: paused;
+}
+
+.testimonial-card {
+  width: 280px;
+  flex-shrink: 0;
+  height: 420px;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.02);
+}
+
+.testimonial-img-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.testimonial-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text Overlay */
+.testimonial-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 83%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.testimonial-card:hover .testimonial-overlay {
+  transform: translateY(0);
+}
+
+
+/* Ken Burns Animation */
+.kenburns {
+  animation: kenburnsZoom 18s ease-in-out infinite alternate;
+}
+
+@keyframes kenburnsZoom {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.1) translate(-2%, -2%);
+  }
+}
+
+
+
+/* ======================== CTA Section ======================== */
+.cta-section {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, var(--bg-color), #fff);
+}
+
+.cta-section h2 {
+  font-size: 2.2rem;
+  font-family: 'Cormorant Garamond', serif;
+  margin-bottom: 2rem;
+}
+
+/* ======================== Responsive ======================== */
+@media (max-width: 768px) {
+  .hero {
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .cta-btn {
+    font-size: 0.95rem;
+  }
+
+  .homeshine-btn {
+    font-size: 0.95rem;
+  }
+  
+  .our-promise h2 {
+    font-size: 2.4rem;
+  }
+
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+}
+
+/* ======================== Fade-in Animations ======================== */
+.fade-text {
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+

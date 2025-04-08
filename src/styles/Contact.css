@@ -1,0 +1,272 @@
+/* Contact Page */
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fffaf7;
+  padding: 5rem 2rem;
+  font-family: 'Cormorant Garamond', serif;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Title */
+.contact-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #d4af37;
+  margin-bottom: 4rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.title-underline {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: #d4af37;
+  transform-origin: left;
+}
+
+/* Main Container */
+.contact-container {
+  display: flex;
+  gap: 3rem;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1300px;
+  width: 100%;
+}
+
+/* Columns */
+.contact-left-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  min-width: 350px;
+  max-width: 500px;
+}
+
+/* Cards */
+.contact-card,
+.map-card,
+.form-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  padding: 2.5rem;
+  transition: all 0.4s ease;
+}
+
+/* Contact Card */
+.contact-card h3,
+.form-card h3 {
+  font-size: 1.8rem;
+  color: #d4af37;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.card-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 2px;
+  background: #d4af37;
+  transform-origin: left;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #1b1f3b;
+  transition: all 0.3s ease;
+}
+
+.icon {
+  font-size: 1.3rem;
+  color: #d4af37;
+  min-width: 25px;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+}
+
+.social-links a {
+  font-size: 1.6rem;
+  color: #1b1f3b;
+  transition: all 0.3s ease;
+}
+
+/* Map Card */
+.map-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.map-card iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+/* Form Card */
+.form-card {
+  flex: 1;
+  min-width: 350px;
+  max-width: 500px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-form label {
+  font-size: 1.1rem;
+  color: #1b1f3b;
+  font-weight: 500;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Cormorant Garamond', serif;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #d4af37;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 180px;
+}
+
+/* Shine Button */
+.contactshine-btn {
+  font-family: 'Cormorant Garamond', serif;
+  display: inline-block;
+  background: #d4af37;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid #d4af37;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactshine-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 50%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(30deg);
+  transition: all 0.7s ease;
+}
+
+.contactshine-btn:hover {
+  background: #c9a227;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+  transform: translateY(-2px);
+}
+
+.contactshine-btn:hover::before {
+  left: 120%;
+}
+
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-left-column,
+  .form-card {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    padding: 4rem 1.5rem;
+  }
+  
+  .contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  
+  .contact-card,
+  .form-card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 2rem;
+  }
+  
+  .contact-card h3,
+  .form-card h3 {
+    font-size: 1.6rem;
+  }
+  
+  .contact-info p {
+    font-size: 1.1rem;
+  }
+  
+  .contactshine-btn {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .floating-lotus {
+    width: 50px;
+    height: 50px;
+  }
+}

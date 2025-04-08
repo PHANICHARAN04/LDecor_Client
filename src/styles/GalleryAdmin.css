@@ -1,0 +1,50 @@
+/* GalleryAdmin.css */
+.gallery-admin {
+    padding: 2rem;
+  }
+  
+  .upload-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .upload-form input,
+  .upload-form button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  
+  .gallery-item {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .gallery-item button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
