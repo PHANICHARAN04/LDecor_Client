@@ -1,4 +1,4 @@
-// src/pages/admin/AdminHome.jsx
+// src/pages/admin/Admin.jsx
 import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import AdminNavbar from '../../components/AdminNavbar';
 
