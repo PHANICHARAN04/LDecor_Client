@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import "../styles/Home.css";
-import heroImg from "../assets/lotus.jpg";
+import heroImg from "../assets/home/11.png";
 
 function Home() {
   const texts = [
@@ -43,7 +43,7 @@ function Home() {
     <div className="home-page">
       {/* Hero Section */}
       <section className="hero">
-        <img src={heroImg} alt="Luxury Wedding Decor" className="hero-img kenburns" />
+        <img src={heroImg} alt="Luxury Wedding Decor" className="hero-img" />
         <div className="hero-content" data-aos="fade-up">
           <h1 className={`fade-text ${fade ? "fade-in" : "fade-out"}`}>
             {texts[textIndex]}

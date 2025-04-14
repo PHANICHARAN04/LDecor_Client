@@ -1,7 +1,6 @@
 import React from 'react';
 import { useAuth } from '../Context/UserContext';
 import Navbar from './Navbar'; // Fixed import path
-import Footer from './Footer'; // Fixed import path
 import Home from '../pages/Home'; // Fixed import path
 import Services from '../pages/Services'; // Fixed import path
 import Gallery from '../pages/Gallery'; // Fixed import path
